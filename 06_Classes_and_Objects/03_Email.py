@@ -9,7 +9,7 @@ class Email:
         self.is_sent = True
 
     def get_info(self):
-        result = f'{self.sender} says to {self.receiver}: {self.content}. Sent: {self.is_sent}"'
+        result = f'{self.sender} says to {self.receiver}: {self.content}. Sent: {self.is_sent}'
         return result
 
 
