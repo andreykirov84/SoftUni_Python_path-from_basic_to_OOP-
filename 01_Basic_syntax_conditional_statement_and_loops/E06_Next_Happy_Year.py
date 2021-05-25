@@ -1,10 +1,10 @@
-""" 1. My solution - 60% in judge system"""
+""" 1. My first solution - 60% in judge system"""
 year = input()
 while len(list(year)) != len(set(year)):
     year = str(int(year) + 1)
 
 print(year)
-"""2. other solution - 100% """
+"""2. My second  solution - 100% """
 input_year = int(input())
 next_year = input_year + 1
 next_happy_year = ""
