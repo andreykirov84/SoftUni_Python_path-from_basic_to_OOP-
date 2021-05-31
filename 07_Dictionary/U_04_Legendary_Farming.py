@@ -54,6 +54,7 @@ for i in range(0, len(ll), 2):
             junk.update({key: value})
 
 print(f'{legendary_item_obtained} obtained!')
+key_materials = sorted_by_key(key_materials)
 key_materials = sorted_by_decreased_value(key_materials)
 junk = sorted_by_key(junk)
 
