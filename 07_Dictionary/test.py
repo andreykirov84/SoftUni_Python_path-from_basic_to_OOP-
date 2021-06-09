@@ -50,11 +50,5 @@
 # print(x)
 # print(x, "is my favorite fruit.")
 
-def calculate(a, b):
-    """
-    
-    :param a:
-    :param b:
-    :return:
-    """
-    return a + b
+a = ' abc abc  '
+print(a.strip())
