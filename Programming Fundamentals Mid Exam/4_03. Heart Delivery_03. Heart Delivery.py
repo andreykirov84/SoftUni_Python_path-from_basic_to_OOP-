@@ -19,3 +19,7 @@ while True:
         neighborhood[default_index] -= 2
         if neighborhood[default_index] == 0:
             print(f"Place {default_index} has Valentine's day.")
+
+
+
+
