@@ -1,4 +1,4 @@
 import re
-names = input().split(', ')
-regex = r'[A-Z]'
-matches = re.findall(regex, names)
+text = 'The rein in Spain'
+x = re.search('\s', text)
+print(x.end())
