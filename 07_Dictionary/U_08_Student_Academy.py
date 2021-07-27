@@ -1,28 +1,29 @@
-def sorted_by_decreased_value(dict):
-    return {k: v for k, v in sorted(dict.items(), reverse=True, key=lambda item: item[1])}
+def value_key_sorted_dict(dd):
+    return sorted(dd.items(), key=lambda x: (x[1]), reverse=True)
 
 
-students = {}
-pop_students = []
+def average(lst):
+    return sum(lst) / len(lst)
+
+
+student_dict = {}
 
 for _ in range(int(input())):
     name = input()
     mark = float(input())
-    if name in students:
-        students.get(name).append(mark)
+    if name not in student_dict:
+        student_dict[name] = [mark]
     else:
-        students.update({name: [mark]})
+        student_dict[name] += [mark]
 
-for key, value in students.items():
-    average = sum(value) / len(value)
-    if average >= 4.50:
-        students.update({key: average})
-    else:
-        pop_students.append(key)
+for name in student_dict:
+    all_marks = student_dict[name]
+    average_mark = average(all_marks)
+    student_dict[name] = average_mark
 
-for key in pop_students:
-    students.pop(key)
+student_dict = dict(value_key_sorted_dict(student_dict))
 
-print(students)
-print(sorted_by_decreased_value(students))
-[print(f'{key} -> {value:.2f}') for key, value in sorted_by_decreased_value(students).items()]
+for name in student_dict:
+    if student_dict[name] >= 4.50:
+        print(f'{name} -> {student_dict[name]:.2f}')
+
