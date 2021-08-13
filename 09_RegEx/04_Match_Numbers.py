@@ -1,10 +1,7 @@
 import re
-pattern = r'(^|(?<=\s))([+-]?(\d+(\.\d+)?))+\s($|(?<=\s))'
+pattern = r'(^|(?<=\s))-?\d+(\.\d+)?($|(?=\s))'
 text = input()
-matches = re.findall(pattern, text)
+matches = re.finditer(pattern, text)
 
 for item in matches:
-    print(item[1], end=' ')
-
-
-
+    print(item.group(0), end=' ')
