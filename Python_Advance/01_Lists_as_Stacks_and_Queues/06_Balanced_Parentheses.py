@@ -1,18 +1,26 @@
-from collections import deque
+parentheses = input()
 
-success_flag = True
-text = deque(input())
+BALANCED_PAIRS = ["{}", "[]", "()"]
+open_brackets = []
+is_valid = True
 
-brackets = {'{': '}', '[': ']', '(': ')'}
+for char in parentheses:
 
-while len(text) > 1:
-    first_bracket = text.popleft()
-    second_bracket = text.pop()
-    if brackets[first_bracket] != second_bracket:
-        success_flag = False
-        break
+    if char in "{[(":
+        open_brackets.append(char)
+    else:
+        if not open_brackets:
+            is_valid = False
+            break
+        else:
+            pair = open_brackets.pop() + char
+            if pair in BALANCED_PAIRS:
+                continue
+            else:
+                is_valid = False
+                break
 
-if success_flag:
-    print('YES')
+if is_valid and not open_brackets:
+    print("YES")
 else:
-    print('NO')
+    print("NO")
