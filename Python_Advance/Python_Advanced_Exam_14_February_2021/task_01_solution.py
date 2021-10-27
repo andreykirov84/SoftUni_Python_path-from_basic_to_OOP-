@@ -1,4 +1,3 @@
-from collections import deque
 storage = {'Palm': 0, 'Willow': 0, 'Crossette': 0}
 
 effect_ll = [int(x) for x in input().split(', ')]
